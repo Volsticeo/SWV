@@ -1,0 +1,330 @@
+/* Enhanced Gallery Section with Subtle Light Lines and Shadows */
+.gallery {
+    position: relative;
+    padding: 80px 0;
+    background: var(--marble-black);
+    color: white;
+    overflow: hidden;
+}
+
+/* Light Lines Background Container */
+.gallery-light-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    z-index: 0;
+    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    pointer-events: none;
+}
+
+.gallery-light-bg.active {
+    opacity: 0.85;
+}
+
+/* Light Lines Canvas Container */
+.light-lines-canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+/* Individual Light Line Elements */
+.light-line {
+    position: absolute;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(212, 175, 140, 0.15) 15%,
+        rgba(255, 255, 255, 0.35) 50%,
+        rgba(212, 175, 140, 0.15) 85%,
+        transparent 100%);
+    transform-origin: left center;
+    filter: blur(0.4px);
+    border-radius: 1px;
+}
+
+/* Horizontal Light Lines */
+.light-line.horizontal {
+    height: 1px;
+    width: 0;
+    box-shadow:
+        0 0 3px rgba(212, 175, 140, 0.2),
+        0 0 6px rgba(255, 255, 255, 0.1),
+        0 0 12px rgba(212, 175, 140, 0.05);
+}
+
+/* Vertical Light Lines */
+.light-line.vertical {
+    width: 1px;
+    height: 0;
+    background: linear-gradient(0deg,
+        transparent 0%,
+        rgba(212, 175, 140, 0.15) 15%,
+        rgba(255, 255, 255, 0.35) 50%,
+        rgba(212, 175, 140, 0.15) 85%,
+        transparent 100%);
+    transform-origin: center top;
+    box-shadow:
+        0 0 3px rgba(212, 175, 140, 0.2),
+        0 0 6px rgba(255, 255, 255, 0.1),
+        0 0 12px rgba(212, 175, 140, 0.05);
+}
+
+/* Diagonal Light Lines */
+.light-line.diagonal {
+    height: 1px;
+    width: 0;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(212, 175, 140, 0.15) 20%,
+        rgba(255, 255, 255, 0.25) 50%,
+        rgba(212, 175, 140, 0.12) 80%,
+        transparent 100%);
+    box-shadow:
+        0 0 2px rgba(212, 175, 140, 0.15),
+        0 0 4px rgba(255, 255, 255, 0.08),
+        0 0 8px rgba(212, 175, 140, 0.04);
+}
+
+/* Shadow Elements */
+.shadow-element {
+    position: absolute;
+    background: radial-gradient(ellipse at center,
+        rgba(0, 0, 0, 0.12) 0%,
+        rgba(0, 0, 0, 0.06) 35%,
+        rgba(0, 0, 0, 0.02) 60%,
+        transparent 80%);
+    border-radius: 50%;
+    filter: blur(3px);
+    opacity: 0;
+}
+
+/* Light Intersection Points */
+.light-intersection {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: radial-gradient(circle,
+        rgba(255, 255, 255, 0.45) 0%,
+        rgba(212, 175, 140, 0.35) 30%,
+        rgba(212, 175, 140, 0.2) 60%,
+        transparent 80%);
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow:
+        0 0 6px rgba(255, 255, 255, 0.25),
+        0 0 12px rgba(212, 175, 140, 0.15),
+        0 0 18px rgba(212, 175, 140, 0.05);
+    filter: blur(0.1px);
+}
+
+/* Ambient Light Glow */
+.ambient-glow {
+    position: absolute;
+    background: radial-gradient(ellipse at center,
+        rgba(212, 175, 140, 0.06) 0%,
+        rgba(212, 175, 140, 0.03) 25%,
+        rgba(255, 255, 255, 0.02) 50%,
+        transparent 70%);
+    border-radius: 50%;
+    filter: blur(25px);
+    opacity: 0.6;
+    animation: ambientPulse 12s ease-in-out infinite alternate;
+}
+
+@keyframes ambientPulse {
+    0% {
+        opacity: 0.4;
+        transform: scale(0.95);
+    }
+    33% {
+        opacity: 0.6;
+        transform: scale(1.05);
+    }
+    66% {
+        opacity: 0.5;
+        transform: scale(1.02);
+    }
+    100% {
+        opacity: 0.4;
+        transform: scale(0.98);
+    }
+}
+
+/* Gallery content overlay */
+.gallery > .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* NEW: Luxury Dots - Subtle elegant points */
+.luxury-dot {
+    position: absolute;
+    background: radial-gradient(circle,
+        rgba(255, 255, 255, 0.45) 0%,
+        rgba(212, 175, 140, 0.35) 30%,
+        rgba(212, 175, 140, 0.15) 60%,
+        transparent 100%);
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow:
+        0 0 3px rgba(255, 255, 255, 0.25),
+        0 0 6px rgba(212, 175, 140, 0.15);
+    filter: blur(0.2px);
+}
+
+/* NEW: Shimmer Particles - Elegant floating elements */
+.shimmer-particle {
+    position: absolute;
+    background: linear-gradient(45deg,
+        rgba(255, 255, 255, 0.3) 0%,
+        rgba(212, 175, 140, 0.4) 25%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(212, 175, 140, 0.3) 75%,
+        rgba(255, 255, 255, 0.15) 100%);
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow:
+        0 0 4px rgba(255, 255, 255, 0.2),
+        0 0 8px rgba(212, 175, 140, 0.1),
+        inset 0 0 2px rgba(255, 255, 255, 0.3);
+    filter: blur(0.3px);
+}
+
+/* Refined Lighting Toggle */
+.lighting-toggle {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.toggle-label {
+    font-weight: 300;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.lighting-switch {
+    position: relative;
+    width: 48px;
+    height: 26px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 13px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+}
+
+.lighting-switch.active {
+    background: rgba(212, 175, 140, 0.3);
+    border-color: rgba(212, 175, 140, 0.5);
+    box-shadow: 0 0 20px rgba(212, 175, 140, 0.2);
+}
+
+.lighting-switch::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    border-radius: 50%;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.lighting-switch.active::before {
+    transform: translateX(22px);
+    background: linear-gradient(145deg, rgba(212, 175, 140, 1), rgba(193, 150, 96, 1));
+    box-shadow: 0 2px 12px rgba(212, 175, 140, 0.4);
+}
+
+/* Responsive Refinements */
+@media (max-width: 1024px) {
+    .light-line {
+        filter: blur(0.3px);
+    }
+
+    .ambient-glow {
+        filter: blur(15px);
+    }
+
+    .luxury-dot {
+        filter: blur(0.15px);
+    }
+
+    .shimmer-particle {
+        filter: blur(0.25px);
+    }
+
+    .light-intersection {
+        width: 2.5px;
+        height: 2.5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .luxury-dot {
+        filter: blur(0.1px);
+    }
+
+    .shimmer-particle {
+        filter: blur(0.2px);
+    }
+
+    .light-intersection {
+        width: 2px;
+        height: 2px;
+    }
+
+    .lighting-toggle {
+        top: 20px;
+        right: 20px;
+        font-size: 0.8rem;
+        gap: 12px;
+    }
+
+    .lighting-switch {
+        width: 42px;
+        height: 24px;
+    }
+
+    .lighting-switch::before {
+        width: 18px;
+        height: 18px;
+    }
+
+    .lighting-switch.active::before {
+        transform: translateX(18px);
+    }
+
+    .light-line {
+        filter: blur(0.2px);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-light-bg {
+        opacity: 0.4;
+    }
+
+    .gallery-light-bg.active {
+        opacity: 0.6;
+    }
+}

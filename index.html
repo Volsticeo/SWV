@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Wood Vein</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="gallery-light-bg.css">
+    <link rel="stylesheet" href="stats.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="hero.css">
+    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="design-process.css">
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="team.css">
+    <link rel="stylesheet" href="testimonial.css">
+    <link rel="stylesheet" href="clients.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="gallery-modal.css">
+    <link rel="stylesheet" href="loading-screen.css">
+</head>
+<body>
+<!-- Loading Screen -->
+<div id="loadingScreen" class="loading-screen">
+    <div class="loading-background"></div>
+    <div class="loading-content">
+        <div class="loading-logo">
+            <img src="./Assets/logos/marble-logo.png" alt="Studio Wood Vein Logo" class="loading-logo-image">
+            <div class="loading-glow"></div>
+        </div>
+        <div class="loading-text">
+            <div class="loading-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Header -->
+<header>
+    <nav class="container">
+        <div class="logo-container">
+            <div class="logo-icon">
+                <!-- Placeholder for logo image -->
+                <img src="./Assets/logos/nav-logo.png" alt="Studio Wood Vein Logo" class="logo-image">
+            </div>
+            <div class="logo">Studio Wood Vein</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#process">Design Process</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#team">Our Team</a></li>
+            <li><a href="#footer">Contact Us</a></li>
+        </ul>
+        <div class="mobile-menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="hero-background">
+        <img src="Assets/hero/DSC09741.JPG"
+             alt="Luxury Interior" class="hero-main-image">
+    </div>
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1>Transform Your Space</h1>
+            <p>Create your interiors with thoughtful design</p>
+            <button class="cta-button" onclick="scrollToSection('services')">Explore Our Services</button>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="services">
+    <div class="container">
+        <h2>Our Services</h2>
+        <p class="section-subtitle">Discover our range of design services</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                         alt="Residential Design">
+                </div>
+                <div class="service-content">
+                    <h3>Interior Design</h3>
+                    <p>Interior design blending style and function for all spaces.</p>
+                    <a href="service-page-int.html" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                         alt="Commercial Design">
+                </div>
+                <div class="service-content">
+                    <h3>Furniture Design</h3>
+                    <p>Bespoke furniture design, tailored to your style—crafted and delivered Pan India.</p>
+                    <a href="service-page-fur.html" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                         alt="Furniture Selection">
+                </div>
+                <div class="service-content">
+                    <h3>Turnkey Projects</h3>
+                    <p>From concept to completion—seamless execution, quality finish.</p>
+                    <a href="service-page-turn.html" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                         alt="Furniture Selection">
+                </div>
+                <div class="service-content">
+                    <h3>Design Consultation</h3>
+                    <p>Expert guidance to transform your space with smart, personalized design.</p>
+                    <a href="service-page-des.html" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Design Process Section -->
+<section id="process" class="design-process">
+    <div class="process-background">
+        <img id="process-bg-image"
+             src="./Assets/design-process/Design_Process-01.JPG"
+             alt="Process Background">
+    </div>
+    <div class="container">
+        <div class="process-content">
+            <div class="process-left">
+                <h2>Our Design Process</h2>
+                <p class="section-subtitle">A streamlined approach to elevate your space.</p>
+            </div>
+            <div class="process-right">
+                <div class="process-steps">
+                    <div class="process-step" data-step="discover"
+                         data-bg="./Assets/design-process/Design_Process-01.JPG">
+                        <div class="step-icon">1</div>
+                        <div class="step-content">
+                            <h3>Discover</h3>
+                            <p>Understanding your vision and needs</p>
+                        </div>
+                    </div>
+                    <div class="process-step" data-step="design"
+                         data-bg="./Assets/design-process/Design_Process-02.png">
+                        <div class="step-icon">2</div>
+                        <div class="step-content">
+                            <h3>Design</h3>
+                            <p>Creating personalized design concepts</p>
+                        </div>
+                    </div>
+                    <div class="process-step" data-step="execute"
+                         data-bg="./Assets/design-process/Design_Process-03.JPG">
+                        <div class="step-icon">3</div>
+                        <div class="step-content">
+                            <h3>Execute</h3>
+                            <p>Bringing designs to life with precision and care</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Section -->
+<section id="gallery" class="gallery">
+    <!-- Geometric Background -->
+    <div class="gallery-light-bg active" id="lightBg">
+        <div class="light-lines-canvas" id="lightCanvas">
+            <!-- Pattern will be generated by JavaScript for perfect arrangement -->
+        </div>
+    </div>
+
+    <!-- Lighting Toggle -->
+    <div class="lighting-toggle">
+        <span class="toggle-label">Ambient Lighting</span>
+        <div class="lighting-switch active" id="lightingToggle"></div>
+    </div>
+    <div class="container">
+        <h2>Gallery</h2>
+        <p class="section-subtitle">Explore our projects that speak for themselves</p>
+        <div class="gallery-grid" id="galleryGrid">
+            <div class="gallery-item gallery-item-1" data-project="modern-living">
+                <img src="./Assets/images/residential-spaces/photo21.png"
+                     alt="Modern Living Room">
+                <div class="gallery-overlay">
+                    <h3>Residential Spaces</h3>
+                    <p>Thoughtfully designed homes that reflect your lifestyle and taste.</p>
+                </div>
+            </div>
+            <div class="gallery-item gallery-item-2" data-project="chic-office">
+                <img src="./Assets/images/elevation-design/photo6.jpg"
+                     alt="Chic Office Space">
+                <div class="gallery-overlay">
+                    <h3>Elevation Design</h3>
+                    <p>Striking facades that blend form, function, and visual appeal.</p>
+                </div>
+            </div>
+            <div class="gallery-item gallery-item-3" data-project="elegant-kitchen">
+                <img src="./Assets/images/commercial-spaces/photo2.jpg"
+                     alt="Elegant Kitchen">
+                <div class="gallery-overlay">
+                    <h3>Commercial Spaces</h3>
+                    <p>Smart, stylish designs that enhance business identity and flow.</p>
+                </div>
+            </div>
+            <div class="gallery-item gallery-item-4" data-project="luxury-bedroom">
+                <img src="./Assets/images/clinical-spaces/photo2.jpg"
+                     alt="Luxury Bedroom">
+                <div class="gallery-overlay">
+                    <h3>Clinical Spaces</h3>
+                    <p>Clean, functional environments tailored for care and comfort.</p>
+                </div>
+            </div>
+            <div class="gallery-item gallery-item-5" data-project="minimalist-dining">
+                <img src="./Assets/images/landscape-design/photo4.png"
+                     alt="Minimalist Dining">
+                <div class="gallery-overlay">
+                    <h3>Landscape Design</h3>
+                    <p>Outdoor spaces crafted for beauty, balance, and usability.</p>
+                </div>
+            </div>
+            <div class="gallery-item gallery-item-6" data-project="contemporary-lounge">
+                <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                     alt="Contemporary Lounge">
+                <div class="gallery-overlay">
+                    <h3>Office Spaces</h3>
+                    <p>Productive workspaces designed for focus, flow, and brand presence.</p>
+                </div>
+            </div>
+            <div class="gallery-item gallery-item-7" data-project="boutique-retail">
+                <img src="./Assets/images/hospitality-design/photo16.png"
+                     alt="Boutique Retail">
+                <div class="gallery-overlay">
+                    <h3>Hospitality Design</h3>
+                    <p>Inviting interiors that elevate guest experience and ambiance.</p>
+                </div>
+            </div>
+            <div class="gallery-item gallery-item-8" data-project="theater-design">
+                <img src="./Assets/images/theater-design/photo3.png"
+                     alt="Luxury Hospitality">
+                <div class="gallery-overlay">
+                    <h3>Theater Design</h3>
+                    <p>Premium spaces designed for exceptional viewing experiences and comfort.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Marble Divider Section -->
+<section class="marble-divider">
+    <div class="marble-background">
+        <img src="marble1.webp" alt="Marble Texture" class="marble-image">
+    </div>
+    <div class="marble-overlay"></div>
+    <div class="marble-logo">
+        <img src="./Assets/logos/marble-logo.png" alt="Studio Wood Vein Logo" class="marble-logo-image">
+    </div>
+</section>
+
+<!-- Team Section -->
+<section id="team" class="team">
+    <div class="container">
+        <div class="team-header">
+            <h2>Meet Our Team</h2>
+            <p class="section-subtitle">A passionate group of creative minds dedicated to transforming spaces</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-member-card">
+                <div class="team-member-image">
+                    <img src="./Assets/profile/JSC.jpg"
+                         alt="Jaideep Sign Chauhan">
+                    <div class="team-member-overlay">
+                        <div class="member-social">
+                            <span class="social-icon" onclick="window.open('https://www.linkedin.com/in/jaideep-singh-chauhan-8216b913a/', '_blank'); event.stopPropagation();">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"
+                                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                          stroke-linejoin="round"/>
+                                    <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                            <span class="social-icon" onclick="window.open('https://instagram.com/jaideep_singh_chauhan', '_blank'); event.stopPropagation();">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor"
+                                          stroke-width="2"/>
+                                    <path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="currentColor"
+                                          stroke-width="2"/>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor"
+                                          stroke-width="2"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member-info">
+                    <h3>Jaideep Singh Chauhan</h3>
+                    <p class="member-role">Lead Interior Designer</p>
+                    <p class="member-bio">With over 12 years of experience in luxury residential design, Jaideep
+                        brings a unique blend of contemporary aesthetics and timeless elegance to every project.</p>
+                </div>
+            </div>
+            <div class="team-member-card">
+                <div class="team-member-image">
+                    <img src="./Assets/profile/KK.jpg"
+                         alt="Michael Chen">
+                    <div class="team-member-overlay">
+                        <div class="member-social">
+                            <span class="social-icon" onclick="window.open('https://www.linkedin.com/in/kartikeya-kadam-631a602b8/', '_blank'); event.stopPropagation();">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"
+                                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                          stroke-linejoin="round"/>
+                                    <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                            <span class="social-icon" onclick="window.open('https://instagram.com/kartikeya_188', '_blank'); event.stopPropagation();">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor"
+                                          stroke-width="2"/>
+                                    <path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="currentColor"
+                                          stroke-width="2"/>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor"
+                                          stroke-width="2"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member-info">
+                    <h3>Kartikeya Kadam</h3>
+                    <p class="member-role">Industrial / Furniture Designer</p>
+                    <p class="member-bio">Kartikeya specializes in commercial spaces and sustainable design solutions.
+                        His innovative approach has earned recognition in leading design publications worldwide.</p>
+                </div>
+            </div>
+        </div>
+        <div class="team-cta">
+            <button class="cta-button" onclick="scrollToSection('contact')">Work With Our Team</button>
+        </div>
+    </div>
+</section>
+
+
+<!-- Stats Section -->
+
+<section id="stats" class="stats">
+    <div class="stats-background">
+        <img src="./Assets/stats/Section-02.JPG"
+             alt="Stats Background">
+    </div>
+    <div class="container">
+        <div class="stats-header">
+            <h2>Our Impact in Numbers</h2>
+            <p class="section-subtitle">Proven results that speak for themselves</p>
+        </div>
+        <div class="stats-content">
+            <div class="stats-left">
+                <div class="stat-card">
+                    <div class="stat-number-container">
+                        <div class="stat-number" data-target="50" data-plus="true">0</div>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-label">Projects Completed</div>
+                        <div class="stat-description">Successfully delivered across residential and commercial spaces</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number-container">
+                        <div class="stat-number" data-target="98">0</div>
+                        <div class="stat-suffix">%</div>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-label">Client Satisfaction</div>
+                        <div class="stat-description">Based on post-project surveys and testimonials</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number-container">
+                        <div class="stat-number" data-target="6" data-plus="true">0</div>
+                    </div>
+                    <div class="stat-info">
+                        <div class="stat-label">Years Experience</div>
+                        <div class="stat-description">Transforming spaces with expertise and creativity</div>
+                    </div>
+                </div>
+            </div>
+            <div class="stats-right">
+                <div class="stats-right-content">
+                    <h3>Excellence in Design</h3>
+                    <p>Our commitment to luxury and precision has established us as industry leaders, creating spaces that transcend expectations and define sophistication.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials">
+    <div class="testimonials-background">
+        <img src="./Assets/stats/Section-01.JPG"
+             alt="Testimonials Background">
+    </div>
+    <div class="container">
+        <div class="testimonials-header">
+            <h2>What Our Clients Say</h2>
+            <p class="section-subtitle">Real feedback from real people</p>
+        </div>
+        <button class="testimonials-nav prev" id="prevArrow">
+            <svg viewBox="0 0 24 24">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+            </svg>
+        </button>
+        <div class="testimonials-grid" id="testimonialsGrid">
+            <!-- Testimonial cards will be populated by JavaScript -->
+        </div>
+        <button class="testimonials-nav next" id="nextArrow">
+            <svg viewBox="0 0 24 24">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+            </svg>
+        </button>
+    </div>
+</section>
+
+<!-- Our Clients Section -->
+<section id="clients" class="clients">
+    <div class="container">
+        <h2>Our Clients</h2>
+        <p class="section-subtitle">Brands we've partnered with</p>
+        <div class="clients-slider">
+            <div class="clients-track">
+                <div class="client-logo">
+                    <div class="client-logo-circle"></div>
+                    <img src="https://logo.clearbit.com/apple.com" alt="Apple">
+                </div>
+                <div class="client-logo">
+                    <div class="client-logo-circle"></div>
+                    <img src="https://logo.clearbit.com/google.com" alt="Google">
+                </div>
+                <div class="client-logo">
+                    <div class="client-logo-circle"></div>
+                    <img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft">
+                </div>
+                <div class="client-logo">
+                    <div class="client-logo-circle"></div>
+                    <img src="https://logo.clearbit.com/amazon.com" alt="Amazon">
+                </div>
+                <div class="client-logo">
+                    <div class="client-logo-circle"></div>
+                    <img src="https://logo.clearbit.com/netflix.com" alt="Netflix">
+                </div>
+                <div class="client-logo">
+                    <div class="client-logo-circle"></div>
+                    <img src="https://logo.clearbit.com/spotify.com" alt="Spotify">
+                </div>
+                <div class="client-logo">
+                    <div class="client-logo-circle"></div>
+                    <img src="https://logo.clearbit.com/airbnb.com" alt="Airbnb">
+                </div>
+                <div class="client-logo">
+                    <div class="client-logo-circle"></div>
+                    <img src="https://logo.clearbit.com/uber.com" alt="Uber">
+                </div>
+                <div class="client-logo">
+                    <div class="client-logo-circle"></div>
+                    <img src="https://logo.clearbit.com/tesla.com" alt="Tesla">
+                </div>
+                <div class="client-logo">
+                    <div class="client-logo-circle"></div>
+                    <img src="https://logo.clearbit.com/adobe.com" alt="Adobe">
+                </div>
+                <div class="client-logo">
+                    <div class="client-logo-circle"></div>
+                    <img src="https://logo.clearbit.com/slack.com" alt="Slack">
+                </div>
+                <div class="client-logo">
+                    <div class="client-logo-circle"></div>
+                    <img src="https://logo.clearbit.com/shopify.com" alt="Shopify">
+                </div>
+
+                <!-- Duplicate set for seamless loop -->
+                <div class="client-logo">
+                    <img src="https://logo.clearbit.com/apple.com" alt="Apple">
+                </div>
+                <div class="client-logo">
+                    <img src="https://logo.clearbit.com/google.com" alt="Google">
+                </div>
+                <div class="client-logo">
+                    <img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft">
+                </div>
+                <div class="client-logo">
+                    <img src="https://logo.clearbit.com/amazon.com" alt="Amazon">
+                </div>
+                <div class="client-logo">
+                    <img src="https://logo.clearbit.com/netflix.com" alt="Netflix">
+                </div>
+                <div class="client-logo">
+                    <img src="https://logo.clearbit.com/spotify.com" alt="Spotify">
+                </div>
+                <div class="client-logo">
+                    <img src="https://logo.clearbit.com/airbnb.com" alt="Airbnb">
+                </div>
+                <div class="client-logo">
+                    <img src="https://logo.clearbit.com/uber.com" alt="Uber">
+                </div>
+                <div class="client-logo">
+                    <img src="https://logo.clearbit.com/tesla.com" alt="Tesla">
+                </div>
+                <div class="client-logo">
+                    <img src="https://logo.clearbit.com/adobe.com" alt="Adobe">
+                </div>
+                <div class="client-logo">
+                    <img src="https://logo.clearbit.com/slack.com" alt="Slack">
+                </div>
+                <div class="client-logo">
+                    <img src="https://logo.clearbit.com/shopify.com" alt="Shopify">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section
+<section id="contact" class="contact">
+    <div class="container">
+        <h2>Get in Touch</h2>
+        <p class="section-subtitle">Schedule a consultation or ask a question</p>
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Send Message</button>
+        </form>
+    </div>
+</section> -->
+
+<!-- Footer -->
+<footer class="footer" id="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Studio Wood Vein</h3>
+                <p>Transforming spaces with thoughtful design and luxury aesthetics. We create environments that inspire and elevate everyday living.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-link">Facebook</a>
+                    <a href="#" class="social-link">Instagram</a>
+                    <a href="#" class="social-link">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Interior Design</a></li>
+                    <li><a href="#services">Furniture Design</a></li>
+                    <li><a href="#services">Turnkey Projects</a></li>
+                    <li><a href="#services">Design Consultation</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#team">Our Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                                      fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <p>Gandhinagar<br>Gujarat, IND 382422</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+                                      fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <a href="tel:+919784372330" style="color: inherit; text-decoration: none;">
+                                <p>(+91) 9784372330</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                                      fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <a href="mailto:s.woodvein@gmail.com" style="color: inherit; text-decoration: none;">
+                                <p>s.woodvein@gmail.com</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Studio Wood Vein. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Gallery Modal -->
+<div id="galleryModal" class="gallery-modal">
+    <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <div class="modal-gallery">
+            <div class="modal-image-container">
+                <!-- This will be populated by JavaScript -->
+            </div>
+            <div class="modal-info">
+                <!-- This will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="script1.js"></script>
+<script src="testimonial.js"></script>
+<script src="gallery-light-bg.js"></script>
+<script src="stats.js"></script>
+<script src="nav.js"></script>
+<script src="services.js"></script>
+<script src="design-process.js"></script>
+<script src="team.js"></script>
+<script src="clients.js"></script>
+<script src="gallery-modal.js"></script>
+<script src="marble-divider.js"></script>
+<script src="loading-screen.js"></script>
+
+</body>
+</html>

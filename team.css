@@ -1,0 +1,809 @@
+/* Team Section */
+.team {
+    padding: 120px 0;
+    background: var(--marble-black);
+    position: relative;
+    color: white;
+}
+
+.team::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to bottom, var(--marble-black) 0%, transparent 100%);
+    z-index: 10;
+    pointer-events: none;
+}
+
+.team-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+/* Updated H2 to match services section styling */
+.team-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 15px;
+    line-height: 1.1;
+    position: relative;
+    transition: all 0.3s ease;
+
+    /* Hero section gradient text effect - same as services */
+    background: linear-gradient(135deg, #F5E4C4 0%, #E8D5B7 25%, #D4C5E8 75%, #B8A9D9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 2px 4px rgba(0, 0, 0, 0.15);
+    filter: blur(0.2px) brightness(1.1) contrast(1.3);
+
+    /* Prevent layout shift when font changes */
+    min-height: 1.1em;
+    margin-top: 0;
+}
+
+.team-header .section-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+    line-height: 1.4;
+}
+
+/* New Layout: Side-by-Side with Team Stats */
+.team-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-bottom: 60px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: start;
+}
+
+/* Left Side: Team Stats & Info */
+.team-content-side {
+    padding-right: 40px;
+}
+
+.team-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 25px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(215, 183, 18, 0.2);
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(215, 183, 18, 0.4);
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 8px;
+    font-family: 'Playfair Display', serif;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-light);
+}
+
+.team-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    opacity: 0.9;
+    margin-bottom: 30px;
+    color: var(--text-light);
+}
+
+.team-philosophy {
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 3px solid var(--gold);
+    border-radius: 8px;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* Right Side: Compact Team Members */
+.team-members-side {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.team-member-card {
+    display: flex;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(215, 183, 18, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    height: 180px;
+    backdrop-filter: blur(10px);
+    min-height: 140px;
+}
+
+.team-member-card:hover {
+    transform: translateX(1px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(215, 183, 18, 0.4);
+}
+
+.team-member-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gold-texture);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+    border-radius: 15px;
+}
+
+.team-member-card:hover::before {
+    opacity: 0.08;
+}
+
+.team-member-image {
+    position: relative;
+    width: 140px;
+    height: 180px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.team-member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: all 0.4s ease;
+}
+
+.team-member-card:hover .team-member-image img {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+.team-member-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(6, 8, 21, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-member-card:hover .team-member-overlay {
+    opacity: 1;
+}
+
+.member-social {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icon {
+    width: 35px;
+    height: 35px;
+    background: rgba(215, 183, 18, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.member-social a {
+    color: white;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.member-social a:hover {
+    color: #D7B712;
+    transform: scale(1.1);
+}
+
+.social-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.social-icon:hover {
+    background: var(--gold);
+    transform: scale(1.1);
+}
+
+.team-member-info {
+    padding: 20px 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+}
+
+.team-member-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    background: var(--gold-metallic);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.member-role {
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.member-bio {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    font-size: 0.9rem;
+    flex: 1; /* Takes remaining space */
+    display: flex;
+    align-items: center;
+}
+
+.team-cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Updated CTA button to match hero section styling */
+.team-cta .cta-button {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid #D4AF37;
+    padding: 18px 40px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+    /* Gradient text color - same as hero */
+    background: linear-gradient(135deg, #F5E4C4 0%, #E8D5B7 25%, #D4C5E8 75%, #B8A9D9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.team-cta .cta-button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.2);
+    border-color: #F5E4C4;
+
+    /* Keep gradient text on hover */
+    background: linear-gradient(135deg, #F5E4C4 0%, #E8D5B7 25%, #D4C5E8 75%, #B8A9D9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.team-cta .cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.team-cta .cta-button:hover::before {
+    left: 100%;
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+    .team {
+        padding: 80px 0;
+    }
+
+    .team-header {
+        margin-bottom: 60px;
+    }
+
+    .team-header h2 {
+        font-size: 3.2rem;
+        margin-bottom: 15px;
+        line-height: 1.15;
+    }
+
+    .team-header .section-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        margin-bottom: 50px;
+    }
+
+    .team-content-side {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .team-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-bottom: 35px;
+    }
+
+    .stat-item {
+        padding: 20px 15px;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+    }
+
+    .team-description {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    .team-philosophy {
+        padding: 20px;
+        font-size: 0.95rem;
+    }
+
+    .team-member-card {
+        height: 160px;
+        min-height: 140px;
+    }
+
+    .team-member-image {
+        width: 130px;
+        height: 160px;
+    }
+
+    .team-member-info {
+        padding: 18px 20px;
+    }
+
+    .team-member-info h3 {
+        font-size: 1.3rem;
+    }
+
+    .member-role {
+        font-size: 0.8rem;
+    }
+
+    .member-bio {
+        font-size: 0.85rem;
+    }
+
+    .social-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+
+    .team-cta .cta-button {
+        padding: 16px 35px;
+        font-size: 15px;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .team {
+        padding: 60px 0;
+    }
+
+    .team::before {
+        height: 100px;
+    }
+
+    .team-header {
+        margin-bottom: 50px;
+    }
+
+    .team-header h2 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
+
+    .team-header .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 15px;
+        padding: 0 20px;
+    }
+
+    .team-grid {
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    .team-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    .stat-item {
+        padding: 18px 12px;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+        margin-bottom: 6px;
+    }
+
+    .stat-label {
+        font-size: 0.75rem;
+    }
+
+    .team-description {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .team-philosophy {
+        padding: 18px;
+        font-size: 0.9rem;
+    }
+
+    .team-member-card {
+        flex-direction: row;
+        min-height: auto;
+        height: 140px;
+    }
+
+    .team-member-image {
+        width: 110px;
+        height: 140px;
+    }
+
+    .team-member-info {
+        height: auto;
+        padding: 15px;
+        flex: 1;
+    }
+
+    .team-member-info h3 {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+    }
+
+    .member-role {
+        font-size: 0.7rem;
+        margin-bottom: 6px;
+    }
+
+    .member-bio {
+        align-items: flex-start;
+        font-size: 0.75rem;
+        line-height: 1.4;
+    }
+
+    .team-member-card:hover {
+        transform: translateX(1px);
+    }
+
+    .social-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 0.85rem;
+    }
+
+    .team-cta {
+        margin-top: 35px;
+    }
+
+    .team-cta .cta-button {
+        padding: 14px 30px;
+        font-size: 14px;
+        letter-spacing: 1.5px;
+    }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+    .team {
+        padding: 50px 0;
+    }
+
+    .team-header {
+        margin-bottom: 40px;
+    }
+
+    .team-header h2 {
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+        line-height: 1.2;
+    }
+
+    .team-header .section-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+        padding: 0 15px;
+    }
+
+    .team-grid {
+        gap: 35px;
+        margin-bottom: 35px;
+    }
+
+    .team-stats {
+        gap: 12px;
+        margin-bottom: 25px;
+    }
+
+    .stat-item {
+        padding: 15px 10px;
+    }
+
+    .stat-number {
+        font-size: 1.6rem;
+        margin-bottom: 5px;
+    }
+
+    .stat-label {
+        font-size: 0.7rem;
+    }
+
+    .team-description {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 18px;
+    }
+
+    .team-philosophy {
+        padding: 15px;
+        font-size: 0.85rem;
+    }
+
+    .team-member-image {
+        width: 90px;
+        height: 120px;
+    }
+
+    .team-member-card {
+        height: 120px;
+    }
+
+    .team-member-info {
+        padding: 12px;
+    }
+
+    .team-member-info h3 {
+        font-size: 1rem;
+        margin-bottom: 4px;
+    }
+
+    .member-role {
+        font-size: 0.65rem;
+        margin-bottom: 4px;
+    }
+
+    .member-bio {
+        font-size: 0.7rem;
+        line-height: 1.3;
+    }
+
+    .social-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+    }
+
+    .team-cta {
+        margin-top: 30px;
+    }
+
+    .team-cta .cta-button {
+        padding: 12px 25px;
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+}
+
+/* Extra Small Displays */
+@media (max-width: 360px) {
+    .team {
+        padding: 40px 0;
+    }
+
+    .team-header {
+        margin-bottom: 35px;
+    }
+
+    .team-header h2 {
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+        line-height: 1.2;
+    }
+
+    .team-header .section-subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+        padding: 0 12px;
+    }
+
+    .team-grid {
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .team-stats {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .stat-item {
+        padding: 12px 8px;
+    }
+
+    .stat-number {
+        font-size: 1.4rem;
+        margin-bottom: 4px;
+    }
+
+    .stat-label {
+        font-size: 0.65rem;
+    }
+
+    .team-description {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        margin-bottom: 15px;
+    }
+
+    .team-philosophy {
+        padding: 12px;
+        font-size: 0.8rem;
+    }
+
+    .team-member-image {
+        width: 80px;
+        height: 100px;
+    }
+
+    .team-member-card {
+        height: 100px;
+    }
+
+    .team-member-info {
+        padding: 10px;
+    }
+
+    .team-member-info h3 {
+        font-size: 0.9rem;
+        margin-bottom: 3px;
+    }
+
+    .member-role {
+        font-size: 0.6rem;
+        margin-bottom: 3px;
+    }
+
+    .member-bio {
+        font-size: 0.65rem;
+        line-height: 1.2;
+    }
+
+    .social-icon {
+        width: 26px;
+        height: 26px;
+        font-size: 0.75rem;
+        gap: 8px;
+    }
+
+    .team-cta {
+        margin-top: 25px;
+    }
+
+    .team-cta .cta-button {
+        padding: 10px 20px;
+        font-size: 12px;
+        letter-spacing: 0.5px;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .team-member-card:hover {
+        transform: none;
+        box-shadow: none;
+        border-color: rgba(215, 183, 18, 0.2);
+    }
+
+    .team-member-card:hover::before {
+        opacity: 0;
+    }
+
+    .team-member-card:hover .team-member-image img {
+        transform: none;
+        filter: none;
+    }
+
+    .team-member-overlay {
+        opacity: 1;
+        background: rgba(6, 8, 21, 0.4);
+    }
+
+    .stat-item:hover {
+        transform: none;
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(215, 183, 18, 0.2);
+    }
+
+    .team-cta .cta-button:hover {
+        transform: none;
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        border-color: #D4AF37;
+    }
+
+    .social-icon:hover {
+        transform: none;
+        background: rgba(215, 183, 18, 0.9);
+    }
+}

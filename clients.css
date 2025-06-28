@@ -1,0 +1,346 @@
+/* Clients Section - Fixed Background Issues */
+.clients {
+    padding: 80px 0;
+    /* Main background - this will now be visible */
+    background: linear-gradient(135deg, #faf8f3 0%, #f5f0e8 50%, #f0ead6 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Remove the conflicting ::before pseudo-element or fix it */
+.clients::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Instead of solid gold, use a subtle gold overlay */
+    background: linear-gradient(135deg,
+        rgba(215, 183, 18, 0.05) 0%,
+        rgba(255, 215, 0, 0.03) 50%,
+        rgba(184, 134, 11, 0.02) 100%);
+    z-index: 0;
+}
+
+/* Canvas for patterns - make sure it doesn't block the background */
+.wood-vein-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.2; /* Reduced opacity so background shows through */
+    pointer-events: none; /* Ensure it doesn't block interactions */
+}
+
+.clients .container {
+    position: relative;
+    z-index: 12;
+}
+
+.clients h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 15px;
+    line-height: 1.1;
+    position: relative;
+    transition: all 0.3s ease;
+
+    /* Same gradient text effect as services */
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 75%, #2c3e50 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05);
+    filter: blur(0.1px) brightness(1.2) contrast(1.2);
+
+    /* Prevent layout shift */
+    min-height: 1.1em;
+    margin-top: 0;
+}
+
+.clients .section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--navy-blue);
+    opacity: 0.8;
+    margin-bottom: 35px;
+    line-height: 1.4;
+}
+
+.clients-slider {
+    margin-top: 40px;
+    overflow: visible;
+    position: relative;
+    padding: 30px 0;
+}
+
+.clients-track {
+    display: flex;
+    animation: scroll 35s linear infinite;
+    gap: 80px;
+    align-items: center;
+    will-change: transform;
+    padding: 0 100px;
+
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Move exactly half the width */
+    }
+}
+
+.client-logo {
+    flex-shrink: 0;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.15); /* Much more transparent */
+    backdrop-filter: blur(20px); /* Increased blur for better glass effect */
+    -webkit-backdrop-filter: blur(20px);
+    border: 2px solid rgba(212, 175, 55, 0.7); /* Gold border */
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Enhanced glass effect with inner glow */
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+        0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.client-logo::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: radial-gradient(circle, rgba(30, 58, 138, 0.3) 0%, rgba(30, 58, 138, 0.1) 50%, transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 1;
+}
+
+
+
+
+
+.client-logo:hover {
+    background: rgba(255, 255, 255, 0.25); /* Slightly less transparent on hover */
+    border-color: rgba(218, 165, 32, 0.8); /* More opaque gold border on hover */
+    transform: translateY(-2px) scale(1.05);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.2),
+        0 8px 25px rgba(0, 0, 0, 0.15),
+        0 0 20px rgba(218, 165, 32, 0.3); /* Gold glow on hover */
+}
+
+.clients::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.15); /* Dark overlay */
+    z-index: 1;
+    pointer-events: none;
+}
+
+.client-logo::before {
+    display: none;
+}
+
+.wave-pattern-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2; /* Above the dark overlay */
+    opacity: 0.9; /* Increase opacity since we have dark overlay */
+    filter: drop-shadow(0 0 8px rgba(30, 58, 138, 0.4))
+            drop-shadow(0 0 15px rgba(30, 58, 138, 0.2)); /* Glow effect */
+}
+
+.client-logo:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-1px) scale(var(--current-scale, 1));
+}
+
+.client-logo:hover .client-logo-circle {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: inset 0 2px 15px rgba(0, 0, 0, 0.15);
+}
+
+.client-logo:hover::before {
+    opacity: 1;
+}
+
+.client-logo img {
+    width: 55%; /* Reduced from 100% to give some padding */
+    height: 80%;
+    object-fit: contain;
+    position: relative;
+    z-index: 11;
+    opacity: 1;
+    filter: contrast(1.2) brightness(0.9); /* Enhance logo contrast */
+    mix-blend-mode: multiply;
+}
+
+
+/* Alternative background options - uncomment the one you prefer */
+
+/* Option 1: Warm cream/beige gradient */
+/*
+.clients {
+    background: linear-gradient(135deg, #faf8f3 0%, #f5f1e8 50%, #ede6d3 100%);
+}
+*/
+
+/* Option 2: Soft gold gradient */
+/*
+.clients {
+    background: linear-gradient(135deg, #fffef7 0%, #fef9e7 50%, #fdf4d3 100%);
+}
+*/
+
+/* Option 3: Navy to cream gradient */
+/*
+.clients {
+    background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f4 25%, #e8eaf6 75%, #dde1e6 100%);
+}
+*/
+
+/* Option 4: Luxury marble-like gradient */
+/*
+.clients {
+    background: linear-gradient(135deg,
+        #ffffff 0%,
+        #f9f7f4 20%,
+        #f4f1ec 40%,
+        #ebe6dc 60%,
+        #e1dcc8 80%,
+        #d7d1b4 100%);
+}
+*/
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+    .clients {
+        padding: 60px 0;
+    }
+
+    .clients h2 {
+        font-size: 3.2rem;
+        margin-bottom: 15px;
+        line-height: 1.15;
+    }
+
+    .clients .section-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 50px;
+    }
+
+    .clients-slider {
+        margin-top: 35px;
+    }
+
+    .clients-track {
+        gap: 60px;
+    }
+
+    .client-logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .client-logo img {
+        padding: 18px;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .clients {
+        padding: 45px 0;
+    }
+
+    .clients h2 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
+
+    .clients .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 40px;
+        padding: 0 20px;
+    }
+
+    .clients-slider {
+        margin-top: 30px;
+        padding: 25px 0;
+    }
+
+    .clients-track {
+        gap: 40px;
+        animation: scroll 28s linear infinite;
+        padding: 0 60px;
+    }
+
+    .client-logo {
+        width: 100px;
+        height: 100px;
+
+    }
+
+    .client-logo::after {
+        top: -15px;
+        left: -15px;
+        right: -15px;
+        bottom: -15px;
+    }
+
+    .client-logo:hover::after {
+        top: -20px;
+        left: -20px;
+        right: -20px;
+        bottom: -20px;
+    }
+
+    .client-logo img {
+        padding: 15px;
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .clients-track {
+        animation: scroll 50s linear infinite;
+    }
+
+    .client-logo {
+        transition: none;
+    }
+
+    .client-logo:hover {
+        transform: scale(1.05);
+    }
+}
