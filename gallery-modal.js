@@ -264,29 +264,14 @@ class GalleryModal {
             const extensions = ['jpg', 'jpeg', 'png', 'webp'];
             const maxImages = 12; // Maximum images to try loading
 
-            // Try to load images with different naming conventions
-            const namingPatterns = [
-                (i) => `${folderPath}/image${i}`,
-                (i) => `${folderPath}/img${i}`,
-                (i) => `${folderPath}/${i}`,
-                (i) => `${folderPath}/photo${i}`,
-                (i) => `${folderPath}/${config.folder}${i}`,
-                (i) => `${folderPath}/${config.folder}-${i}`
-            ];
-
-            // Try different combinations
             for (let i = 1; i <= maxImages; i++) {
-                for (const pattern of namingPatterns) {
-                    for (const ext of extensions) {
-                        const imagePath = `${pattern(i)}.${ext}`;
-                        if (await this.imageExists(imagePath)) {
-                            imagePaths.push(imagePath);
-                            break;
-                        }
+                for (const ext of extensions) {
+                    const imagePath = `${folderPath}/photo${i}.${ext}`;
+                    if (await this.imageExists(imagePath)) {
+                        imagePaths.push(imagePath);
+                        break; // Found image with this number, move to next
                     }
-                    if (imagePaths.length >= maxImages) break;
                 }
-                if (imagePaths.length >= maxImages) break;
             }
 
             // If no images found, show error
@@ -529,56 +514,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
-// Alternative folder structure checking (if you want to try different structures)
-// You can modify the loadProjectImages method to try these patterns:
-const alternativeFolderStructures = {
-    'modern-living': [
-        'assets/gallery/residential-spaces',
-        'Assets/images/residential',
-        'images/gallery/residential',
-        'gallery/residential-spaces'
-    ],
-    'chic-office': [
-        'assets/gallery/elevation-design',
-        'Assets/images/elevation',
-        'images/gallery/elevation',
-        'gallery/elevation-design'
-    ],
-    'elegant-kitchen': [
-        'assets/gallery/commercial-spaces',
-        'Assets/images/commercial',
-        'images/gallery/commercial',
-        'gallery/commercial-spaces'
-    ],
-    'luxury-bedroom': [
-        'assets/gallery/clinical-spaces',
-        'Assets/images/clinical',
-        'images/gallery/clinical',
-        'gallery/clinical-spaces'
-    ],
-    'minimalist-dining': [
-        'assets/gallery/landscape-design',
-        'Assets/images/landscape',
-        'images/gallery/landscape',
-        'gallery/landscape-design'
-    ],
-    'contemporary-lounge': [
-        'assets/gallery/office-spaces',
-        'Assets/images/office',
-        'images/gallery/office',
-        'gallery/office-spaces'
-    ],
-    'boutique-retail': [
-        'assets/gallery/hospitality-design',
-        'Assets/images/hospitality',
-        'images/gallery/hospitality',
-        'gallery/hospitality-design'
-    ],
-    'theater-design': [
-        'assets/gallery/theater-design',
-        'Assets/images/theater',
-        'images/gallery/theater',
-        'gallery/theater-design'
-    ]
-};
