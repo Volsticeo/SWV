@@ -261,7 +261,7 @@ class GalleryModal {
             const folderPath = `Assets/images/${config.folder}`;
 
             // Common image extensions to try
-            const extensions = ['jpg', 'jpeg', 'png', 'webp'];
+            const extensions = ['jpg', 'png'];
             const maxImages = 12; // Maximum images to try loading
 
             for (let i = 1; i <= maxImages; i++) {
