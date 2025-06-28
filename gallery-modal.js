@@ -262,12 +262,9 @@ class GalleryModal {
             const maxImages = 12; // Maximum images to try loading
 
             for (let i = 1; i <= maxImages; i++) {
-                for (const ext of extensions) {
-                    const imagePath = `${folderPath}/photo${i}.jpg`;
-                    if (await this.imageExists(imagePath)) {
-                        imagePaths.push(imagePath);
-                        break; // Found image with this number, move to next
-                    }
+                const imagePath = `${folderPath}/photo${i}.jpg`;
+                if (await this.imageExists(imagePath)) {
+                    imagePaths.push(imagePath);
                 }
             }
 
