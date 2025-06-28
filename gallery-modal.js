@@ -259,14 +259,11 @@ class GalleryModal {
             // Generate image paths (assuming 6-12 images per project)
             const imagePaths = [];
             const folderPath = `Assets/images/${config.folder}`;
-
-            // Common image extensions to try
-            const extensions = ['jpg', 'png'];
             const maxImages = 12; // Maximum images to try loading
 
             for (let i = 1; i <= maxImages; i++) {
                 for (const ext of extensions) {
-                    const imagePath = `${folderPath}/photo${i}.${ext}`;
+                    const imagePath = `${folderPath}/photo${i}.jpg`;
                     if (await this.imageExists(imagePath)) {
                         imagePaths.push(imagePath);
                         break; // Found image with this number, move to next
