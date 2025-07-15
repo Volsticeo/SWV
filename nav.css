@@ -496,7 +496,8 @@ nav {
     }
 
     .logo {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
+        white-space: nowrap;
     }
 
     .nav-links {
