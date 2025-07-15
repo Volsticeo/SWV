@@ -466,16 +466,21 @@
 
 @media (max-width: 468px) {
     .footer {
-        padding: 50px 0 20px;
+        padding: 60px 0 30px;
     }
 
     .footer-content {
-        margin-bottom: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0;
+        margin-bottom: 40px;
     }
 
-    .footer-section h3 {
-        font-size: 1.4rem;
-        margin-bottom: 20px;
+    .footer-section {
+        display: block;
+        width: 100%;
+        margin-bottom: 30px;
     }
 
     /* Keep Studio wood vein section at top */
@@ -493,35 +498,26 @@
         display: none;
     }
 
-    .footer-section:nth-child(1) {
-    text-align: center !important;
-}
-
-    .footer-section:nth-child(1) h3 {
-        text-align: center !important;
-    }
-
-    .footer-section:nth-child(1) p {
-        text-align: center !important;
-    }
-
-    /* Quick Links takes left side */
+    /* Create a wrapper for Quick Links and Contact Icons to be side by side */
     .footer-section:nth-child(3) {
-        display: inline-block;
-        width: 60%;
-        vertical-align: top;
-        margin-bottom: 30px;
-        margin-left: 7.5%
+        flex: 0 1 auto;
+        width: auto;
+        float: none;
     }
 
-    /* Contact info icons stacked vertically on right side */
+    /* Contact info icons positioned on right side */
     .footer-section:nth-child(4) {
-        display: inline-block;
-        width: 25%;
-        vertical-align: top;
-        margin-bottom: 30px;
-        margin-left: 5%;
-        margin-right: 7.5%
+        flex: 0 1 auto;
+        width: auto;
+        float: none;
+        margin-left: 75px;
+    }
+
+    /* Clear floats after footer sections */
+    .footer-content::after {
+        content: "";
+        display: table;
+        clear: both;
     }
 
     /* Hide contact info header */
@@ -533,12 +529,12 @@
     .footer-section:nth-child(4) .contact-info {
         display: flex;
         flex-direction: row;
-        gap: 12px;
+        gap: 15px;
         align-items: center;
         justify-content: flex-start;
         flex-wrap: wrap;
         height: 100%;
-        min-height: 160px;
+        min-height: 180px;
     }
 
     .footer-section:nth-child(4) .contact-item {
@@ -551,37 +547,32 @@
         display: none;
     }
 
-    /* Increase icon size for better visibility */
+    /* Increase icon size */
     .footer-section:nth-child(4) .contact-icon {
-        width: 28px;
-        height: 28px;
+        width: 32px;
+        height: 32px;
     }
 
-    .footer-section:nth-child(3) h4 {
-        font-size: 1rem;
-        margin-bottom: 12px;
+    .footer-section:nth-child(3),
+    .footer-section:nth-child(4) {
+        margin-bottom: 10px;
     }
 
-    .footer-section:nth-child(3) ul li {
-        font-size: 0.85rem;
-        margin-bottom: 8px;
-
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding-top: 15px;
     }
 
     .footer-social {
-        gap: 15px;
-    }
-
-    .social-link {
-        padding: 6px 12px;
-        font-size: 0.8rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .footer-links {
-        gap: 15px;
-    }
-
-    .footer-links a {
-        font-size: 0.9rem;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
